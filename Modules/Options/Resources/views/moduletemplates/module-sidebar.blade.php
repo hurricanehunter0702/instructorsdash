@@ -7,10 +7,8 @@
         <div class="py-2 collapse-inner rounded">
             <a class="collapse-item all-events-link {{ routeName() == 'options.confirm-page.index' ? 'active' : '' }}"
                href="{{ route('options.confirm-page.index') }}">@lang('Confirm page')</a>
-        </div>
-        <div class="py-2 collapse-inner rounded">
             <a class="collapse-item all-events-link {{ routeName() == 'options.calendar-setting.index' ? 'active' : '' }}"
-               href="{{ route('options.calendar-setting.index') }}">@lang('Calendar')</a>
+                href="{{ route('options.calendar-setting.index') }}">@lang('Calendar')</a>
         </div>
     </div>
 </li>

@@ -4,9 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>@if(!empty($setting->title)) {{$setting->title}} @else {{$event->name}} @endif</title>
-    <meta name="description" content="{{$setting->description}}">
-    <meta name="keywords" content="{{$setting->keywords}}">
+    <title>@if(!empty($setting->title)) {{$setting->title}} @else {{count($events) ? $events[0]->name : "" }} @endif</title>
+    <meta name="description" content="{{is_null($setting) ? '' : $setting->description}}">
+    <meta name="keywords" content="{{ is_null($setting) ? '' : $setting->keywords}}">
     <link rel="shortcut icon" href="{{ asset(config('app.logo_favicon')) }}">
 
     <!-- Bootstrap CSS -->
@@ -50,7 +50,7 @@
         <i class="fas fa-times text-danger mr-2"></i> {!! session('error') !!}
     </div>
 @endif
-    <div class="main-1 m-0" style="background-color: {{ $setting->bg_color }}" id="test">
+    <div class="main-1 m-0" style="background-color: {{ is_null($setting) ? '' : $setting->bg_color }}" id="test">
         <div class="container pt-4">
             <div class="d-flex">
                 <h2 class="text-white my-auto main-heading3 ">

@@ -187,7 +187,7 @@
 @endphp
 <div id="description" class="cards-2">
     <div class="container">
-        <h3>
+        <h3 class="mb-5">
           <i class="fa fa-calendar-alt"></i>
           {{ \Carbon\Carbon::parse($event->start_date)->toFormattedDateString() }} - {{ \Carbon\Carbon::parse($event->end_date)->toFormattedDateString() }}
           <i class="fa fa-clock"></i> {{ \Carbon\Carbon::parse($event->end_date)->format('h:i A') }}
